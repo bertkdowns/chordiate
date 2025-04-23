@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+# Chordiate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Chordiate is a web-based music tool built with React, TypeScript, and Vite. It allows users to play notes and chords using their keyboard, record them, and play them back in a loop. The application is designed to be intuitive and interactive, making it a great tool for musicians and hobbyists alike.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Play Notes and Chords**: Use your keyboard to play individual notes or chords. Switch between chord modes (root, major/minor, major/minor7, diminished) with ease.
+- **Record and Quantize**: Record your notes and chords, which are automatically quantized to the nearest 8th note for precise playback.
+- **Loop Playback**: Play back your recorded notes in a 4-bar repeating rhythm. Each note's duration is recorded and used during playback.
+- **Interactive Note Management**: View your recorded notes on the screen and click on them to remove them from the sequence.
+- **Deployable to GitHub Pages**: Easily build and deploy the application to GitHub Pages using the included GitHub Actions workflow.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v16 or later)
+- npm (Node Package Manager)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd chordiate
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+Start the development server:
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open your browser and navigate to `http://localhost:3000` to use the application.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Building for Production
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Build the application for production:
+```bash
+npm run build
 ```
+
+The production-ready files will be in the `dist` directory.
+
+### Deploying to GitHub Pages
+
+1. Ensure the repository is connected to GitHub.
+2. Push changes to the `main` branch.
+3. The GitHub Actions workflow will automatically build and deploy the application to GitHub Pages.
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A strongly typed programming language that builds on JavaScript.
+- **Vite**: A fast build tool and development server.
+- **Tone.js**: A Web Audio framework for creating interactive music applications.
+
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests to improve the application.
